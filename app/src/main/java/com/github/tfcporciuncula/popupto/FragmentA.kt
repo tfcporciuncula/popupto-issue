@@ -10,8 +10,7 @@ class FragmentA : Fragment(R.layout.fragment_a) {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     view.findViewById<View>(R.id.textView).setOnClickListener {
-//      findNavController().navigate(FragmentADirections.actionFragmentAToFragmentX())
-      findNavController().navigate(FragmentADirections.actionFragmentAToFragmentXWontWork())
+      findNavController().navigate(FragmentADirections.actionFragmentAToFragmentX())
     }
   }
 }

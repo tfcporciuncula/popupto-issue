@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/fragmentMain"
+  >
+
+  <fragment
+    android:id="@+id/fragmentMain"
+    android:name="com.github.tfcporciuncula.popupto.FragmentMain"
+    >
+
+    <action
+      android:id="@+id/action_fragmentMain_to_fragmentA"
+      app:destination="@id/fragmentA"
+      app:popUpTo="@id/fragmentMain"
+      app:popUpToInclusive="true"
+      />
+
+    <action
+      android:id="@+id/action_fragmentMain_to_fragmentB"
+      app:destination="@id/fragmentB"
+      app:popUpTo="@id/fragmentMain"
+      app:popUpToInclusive="true"
+      />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/fragmentA"
+    android:name="com.github.tfcporciuncula.popupto.FragmentA"
+    tools:layout="@layout/fragment_a"
+    >
+
+    <action
+      android:id="@+id/action_fragmentA_to_fragmentX"
+      app:destination="@id/fragmentX"
+      app:popUpTo="@id/fragmentA"
+      app:popUpToInclusive="true"
+      />
+
+    <!-- This won't work since fragmentMain has already been popped, but I think it should work -->
+    <action
+      android:id="@+id/action_fragmentA_to_fragmentX_wont_work"
+      app:destination="@id/fragmentX"
+      app:popUpTo="@id/fragmentMain"
+      app:popUpToInclusive="true"
+      />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/fragmentB"
+    android:name="com.github.tfcporciuncula.popupto.FragmentB"
+    android:label="FragmentB"
+    tools:layout="@layout/fragment_b"
+    />
+
+  <fragment
+    android:id="@+id/fragmentX"
+    android:name="com.github.tfcporciuncula.popupto.FragmentX"
+    tools:layout="@layout/fragment_x"
+    />
+
+</navigation>
